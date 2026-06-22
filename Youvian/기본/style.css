@@ -1,0 +1,242 @@
+body {
+    background-color:#eaf4ff;
+    font-family:Arial, sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-size:50px;
+    color:#003366;
+}
+
+.container{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+}
+
+.card{
+    background:white;
+    margin:10px;
+    padding:10px;
+    border-radius:15px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.card:hover{
+    
+    transform:translateY(-8px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#0066cc;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+    background:#004b99;
+}
+
+.player-card{
+    background:#f5f8fc;
+
+    padding:10px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.player-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.player-card p{
+    margin:8px 0;
+}
+
+input{
+    width:250px;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid lightgray;
+
+    font-size:16px;
+}
+
+#searchResult{
+
+    margin-top:20px;
+
+}
+
+.news-card{
+
+background:#f5f8fc;
+
+margin:10px;
+
+padding:12px;
+
+border-radius:15px;
+
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+}
+
+.news-card:hover{
+
+transform:translateY(-3px);
+
+}
+
+.news-card h3{
+
+color:#003366;
+
+font-size:20px;
+
+}
+
+.news-card p{
+
+color:gray;
+
+}
+
+nav{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:30px;
+
+margin-bottom:30px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#003366;
+
+}
+
+nav a:hover{
+
+color:#0066cc;
+
+}
+
+.dark-mode{
+
+background:#1b1b1b;
+
+color:white;
+
+}
+
+.dark-mode .card{
+
+background:#2b2b2b;
+
+}
+
+.dark-mode .player-card{
+
+background:#333;
+
+}
+
+.dark-mode .news-card{
+
+background:#333;
+
+}
+
+.dark-mode h1{
+
+color:white;
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+width:95%;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+input{
+
+width:80%;
+
+}
+
+}
+
+#player-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+@media(max-width:768px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+#player-list{
+
+grid-template-columns:1fr;
+
+}
+
+}
