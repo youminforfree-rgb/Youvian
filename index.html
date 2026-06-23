@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset=""UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youvian</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-        
+<header>
+
+    <nav>
+
         <a href="#">홈</a>
         <a href="#">선수</a>
         <a href="#">뉴스</a>
@@ -21,49 +22,40 @@
             다크모드
         </button>
 
-        </nav>
-        <h1>⚽ Football Hub</h1>
-        <p>축구 정보와 선수 데이터를 한 곳에서</p>
-    </header>
+    </nav>
 
-    <div class="container">
+    <h1>⚽ Youvian</h1>
+    <p>축구 정보와 선수 데이터를 한 곳에서</p>
 
-    
+</header>
+
+
+<div class="container">
+
+    <div class="main-grid">
+
         <div class="card">
             <h2>👤 선수 정보</h2>
-
-            <div id="player-list">
-
-            </div>
-            
+            <div id="player-list"></div>
         </div>
 
         <div class="card">
-            <h2>축구 뉴스</h2>
-            
-            <div id="news-list">
-
-            </div>
-
+            <h2>📰 축구 뉴스</h2>
+            <div id="news-list"></div>
         </div>
 
         <div class="card">
-            
-        <h2>시장가치 TOP10</h2>
-
-        <div id="top-value">
-
-        </div>
-           
+            <h2>💰 시장가치 TOP10</h2>
+            <div id="top-value"></div>
         </div>
 
         <div class="card">
-            <h2>선수 검색</h2>
+            <h2>🔍 선수 검색</h2>
 
             <input
-            type="text"
-            id="searchInput"
-            placeholder="선수 이름 입력">
+                type="text"
+                id="searchInput"
+                placeholder="선수 이름 입력">
 
             <br><br>
 
@@ -72,11 +64,32 @@
             </button>
 
             <div id="searchResult"></div>
-    
+
+        </div>
+
+        <div class="card">
+            <h2>📅 경기 일정</h2>
+
+            <div id="matches">
+                준비 중...
+            </div>
+
+        </div>
+
+        <div class="card">
+            <h2>🏆 EPL 순위</h2>
+
+            <div id="standings">
+                준비 중...
+            </div>
+
         </div>
 
     </div>
 
+</div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
