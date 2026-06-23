@@ -179,3 +179,35 @@ darkBtn.addEventListener("click",()=>{
 
     document.body.classList.toggle("dark-mode");
 })
+
+async function loadMatches() {
+    
+    const response = await fetch(
+        "https://api.football-data.org/v4/matches",
+        {
+            headers: {
+                "X-Auth-Token": "b374ae2164dd454fbfa7bed72a523ef3"
+            }
+        }
+    );
+
+    const data = await response.json();
+
+    const matchesDiv = document.getElementById("matches");
+
+    matchesDiv.innerHTML = "";
+
+    data.matches.slice(0, 10).forEach(match => {
+
+        matchesDiv.innerHTML += `
+        <div class="news-card">
+            <h3>${match.homeTeam.name}</h3>
+            <p>VS</p>
+            <h3>${match.awayTeam.name}</h3>
+            <p>${match.utcDate.slice(0,10)}</p>
+        </div>
+        `;
+    });
+}
+
+loadMatches();
