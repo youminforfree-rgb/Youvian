@@ -48,7 +48,8 @@ const playerList = document.getElementById("player-list");
 players.forEach(player => {
 
 playerList.innerHTML += `
-<div class="player-card">
+<div class="player-card"
+onclick="location.href='player.html?name=${encodeURIComponent(player.name)}'">
 
 <h3>${player.name}</h3>
 
