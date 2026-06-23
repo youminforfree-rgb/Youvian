@@ -42,6 +42,7 @@ value:170
 }
 ];
 
+// 선수 정보
 const playerList = document.getElementById("player-list");
 
 players.forEach(player => {
@@ -55,19 +56,20 @@ playerList.innerHTML += `
 
 <p>포지션 : ${player.position}</p>
 
-<p>시장가치 : ${player.value}</p>
+<p>시장가치 : €${player.value}M</p>
 
 </div>
 `;
 
 });
 
+// 선수 검색
 const searchBtn = document.getElementById("searchBtn");
 
 searchBtn.addEventListener("click", ()=>{
 
-const input = document
-.getElementById("searchInput")
+const input =
+document.getElementById("searchInput")
 .value
 .toLowerCase();
 
@@ -80,7 +82,7 @@ document.getElementById("searchResult");
 
 if(result){
 
-searchResult.innerHTML=`
+searchResult.innerHTML = `
 
 <div class="player-card">
 
@@ -90,7 +92,7 @@ searchResult.innerHTML=`
 
 <p>포지션 : ${result.position}</p>
 
-<p>시장가치 : ${result.value}</p>
+<p>시장가치 : €${result.value}M</p>
 
 </div>
 
@@ -100,17 +102,19 @@ searchResult.innerHTML=`
 
 else{
 
-searchResult.innerHTML="<p>선수를 찾을 수 없습니다.</p>";
+searchResult.innerHTML =
+"<p>선수를 찾을 수 없습니다.</p>";
 
 }
 
 });
 
+// 시장가치 TOP10
 const topValue =
 document.getElementById("top-value");
 
 const sortedPlayers =
-[...players].sort((a,b)=> b.value-a.value);
+[...players].sort((a,b)=>b.value-a.value);
 
 sortedPlayers.forEach(player=>{
 
@@ -130,6 +134,7 @@ topValue.innerHTML += `
 
 });
 
+// 뉴스
 const news = [
 
 {
@@ -154,7 +159,8 @@ date:"2026-06-21"
 
 ];
 
-const newsList = document.getElementById("news-list");
+const newsList =
+document.getElementById("news-list");
 
 news.forEach(article=>{
 
@@ -172,59 +178,58 @@ newsList.innerHTML += `
 
 });
 
+// 다크모드
 const darkBtn =
 document.getElementById("darkModeBtn");
 
 darkBtn.addEventListener("click",()=>{
 
-    document.body.classList.toggle("dark-mode");
-})
+document.body.classList.toggle("dark-mode");
 
-async function loadMatches() {
+});
 
-    const matchesDiv = document.getElementById("matches");
+// 경기 일정
+const matchesDiv =
+document.getElementById("matches");
 
-    matchesDiv.innerHTML = "불러오는 중...";
+matchesDiv.innerHTML = `
 
-    try {
+<div class="news-card">
+<h3>Manchester City</h3>
+<p>VS</p>
+<h3>Liverpool</h3>
+<p>2026-06-25</p>
+</div>
 
-        const response = await fetch("/api/matches");
+<div class="news-card">
+<h3>Real Madrid</h3>
+<p>VS</p>
+<h3>Barcelona</h3>
+<p>2026-06-26</p>
+</div>
 
-        const data = await response.json();
+`;
 
-        matchesDiv.innerHTML = "";
+// EPL 순위
+const standingsDiv =
+document.getElementById("standings");
 
-        data.matches.slice(0,10).forEach(match => {
+standingsDiv.innerHTML = `
 
-            matchesDiv.innerHTML += `
+<div class="news-card">
+<h3>1. Liverpool</h3>
+</div>
 
-            <div class="news-card">
+<div class="news-card">
+<h3>2. Arsenal</h3>
+</div>
 
-                <h3>${match.homeTeam.name}</h3>
+<div class="news-card">
+<h3>3. Manchester City</h3>
+</div>
 
-                <p>VS</p>
+<div class="news-card">
+<h3>4. Chelsea</h3>
+</div>
 
-                <h3>${match.awayTeam.name}</h3>
-
-                <p>${match.utcDate.slice(0,10)}</p>
-
-            </div>
-
-            `;
-
-        });
-
-    }
-
-    catch(error){
-
-        matchesDiv.innerHTML =
-        "<p>경기 정보를 불러오지 못했습니다.</p>";
-
-        console.error(error);
-
-    }
-
-}
-
-loadMatches();
+`;
