@@ -5,35 +5,30 @@ team:"Al Nassr",
 position:"ST",
 value:12
 },
-
 {
 name:"Lionel Messi",
 team:"Inter Miami",
 position:"RW",
 value:18
 },
-
 {
 name:"Erling Haaland",
 team:"Manchester City",
 position:"ST",
 value:180
 },
-
 {
 name:"Kylian Mbappe",
 team:"Real Madrid",
 position:"ST",
 value:180
 },
-
 {
 name:"Jude Bellingham",
 team:"Real Madrid",
 position:"CM",
 value:180
 },
-
 {
 name:"Vinicius Jr",
 team:"Real Madrid",
@@ -42,14 +37,17 @@ value:170
 }
 ];
 
+
+
 // 선수 정보
+
 const playerList = document.getElementById("player-list");
 
-players.forEach(player => {
+players.forEach(player=>{
 
 playerList.innerHTML += `
-<div class="player-card"
-onclick="location.href='player.html?name=${encodeURIComponent(player.name)}'">
+
+<div class="player-card">
 
 <h3>${player.name}</h3>
 
@@ -60,23 +58,27 @@ onclick="location.href='player.html?name=${encodeURIComponent(player.name)}'">
 <p>시장가치 : €${player.value}M</p>
 
 </div>
+
 `;
 
 });
 
-// 선수 검색
+
+
+// 검색
+
 const searchBtn = document.getElementById("searchBtn");
 
-searchBtn.addEventListener("click", ()=>{
+searchBtn.addEventListener("click",()=>{
 
 const input =
 document.getElementById("searchInput")
 .value
 .toLowerCase();
 
-const result = players.find(player =>
-player.name.toLowerCase().includes(input)
-);
+const result =
+players.find(player=>
+player.name.toLowerCase().includes(input));
 
 const searchResult =
 document.getElementById("searchResult");
@@ -110,7 +112,10 @@ searchResult.innerHTML =
 
 });
 
-// 시장가치 TOP10
+
+
+// 시장가치 TOP
+
 const topValue =
 document.getElementById("top-value");
 
@@ -135,7 +140,10 @@ topValue.innerHTML += `
 
 });
 
+
+
 // 뉴스
+
 const news = [
 
 {
@@ -179,7 +187,10 @@ newsList.innerHTML += `
 
 });
 
+
+
 // 다크모드
+
 const darkBtn =
 document.getElementById("darkModeBtn");
 
@@ -189,48 +200,72 @@ document.body.classList.toggle("dark-mode");
 
 });
 
+
+
 // 경기 일정
+
 const matchesDiv =
 document.getElementById("matches");
 
 matchesDiv.innerHTML = `
 
 <div class="news-card">
+
 <h3>Manchester City</h3>
+
 <p>VS</p>
+
 <h3>Liverpool</h3>
+
 <p>2026-06-25</p>
+
 </div>
 
 <div class="news-card">
+
 <h3>Real Madrid</h3>
+
 <p>VS</p>
+
 <h3>Barcelona</h3>
+
 <p>2026-06-26</p>
+
 </div>
 
 `;
 
+
+
 // EPL 순위
+
 const standingsDiv =
 document.getElementById("standings");
 
 standingsDiv.innerHTML = `
 
 <div class="news-card">
+
 <h3>1. Liverpool</h3>
+
 </div>
 
 <div class="news-card">
+
 <h3>2. Arsenal</h3>
+
 </div>
 
 <div class="news-card">
+
 <h3>3. Manchester City</h3>
+
 </div>
 
 <div class="news-card">
+
 <h3>4. Chelsea</h3>
+
 </div>
 
 `;

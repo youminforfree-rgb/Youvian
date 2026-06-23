@@ -1,226 +1,166 @@
 body{
-    background:#eaf4ff;
-    font-family:Arial,sans-serif;
-    margin:0;
-    text-align:center;
+background:#eaf4ff;
+font-family:Arial,sans-serif;
+margin:0;
+text-align:center;
 }
 
 header{
-    padding:30px;
+padding:30px;
 }
 
 h1{
-    font-size:50px;
-    color:#003366;
+font-size:50px;
+color:#003366;
 }
 
 nav{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
-
-    background:#dce7f2;
-
-    padding:20px;
-
-    position:sticky;
-    top:0;
-
-    z-index:100;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+background:#dce7f2;
+padding:20px;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav a{
-    text-decoration:none;
-    color:#003366;
-    font-size:20px;
-    font-weight:bold;
+text-decoration:none;
+color:#003366;
+font-size:20px;
+font-weight:bold;
 }
 
 nav a:hover{
-    color:#0066cc;
+color:#0066cc;
 }
 
 .container{
-    width:90%;
-    max-width:1400px;
-    margin:auto;
+width:90%;
+max-width:1400px;
+margin:auto;
 }
 
 .main-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
 }
 
 .card{
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-
-    transition:0.3s;
-
-    min-height:300px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+min-height:300px;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card h2{
-    color:#003366;
+color:#003366;
 }
 
 button{
-    padding:10px 20px;
-
-    border:none;
-
-    background:#0066cc;
-
-    color:white;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    transition:0.3s;
+padding:10px 20px;
+border:none;
+background:#0066cc;
+color:white;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    background:#004b99;
+background:#004b99;
 }
 
 input{
-    width:250px;
-
-    padding:10px;
-
-    border-radius:10px;
-
-    border:1px solid lightgray;
-
-    font-size:16px;
+width:250px;
+padding:10px;
+border-radius:10px;
+border:1px solid lightgray;
+font-size:16px;
 }
 
 #player-list{
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
 
 .player-card{
-    background:#f5f8fc;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    box-shadow:0 3px 8px rgba(0,0,0,0.1);
-
-    transition:0.3s;
-
-    cursor:pointer;
+background:#f5f8fc;
+padding:20px;
+border-radius:15px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
 .player-card:hover{
-
-    background:white;
-
-    transform:translateY(-5px) scale(1.02);
-
+background:white;
+transform:translateY(-5px);
 }
 
 .news-card{
-
-    background:#f5f8fc;
-
-    margin:10px;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    box-shadow:0 3px 8px rgba(0,0,0,0.1);
-
-    transition:0.3s;
-}
-
-.news-card:hover{
-
-    transform:translateY(-3px);
-
-}
-
-.news-card h3{
-
-    color:#003366;
-
+background:#f5f8fc;
+margin:10px;
+padding:15px;
+border-radius:15px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
 }
 
 .dark-mode{
-
-    background:#1b1b1b;
-
-    color:white;
+background:#1b1b1b;
+color:white;
 }
 
 .dark-mode .card{
-
-    background:#2b2b2b;
+background:#2b2b2b;
 }
 
 .dark-mode .player-card{
-
-    background:#333;
+background:#333;
 }
 
 .dark-mode .news-card{
-
-    background:#333;
+background:#333;
 }
 
 .dark-mode h1{
+color:white;
+}
 
-    color:white;
+#matches,
+#standings{
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
 @media(max-width:768px){
 
-    nav{
-
-        flex-direction:column;
-
-        gap:15px;
-    }
-
-    .main-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    #player-list{
-
-        grid-template-columns:1fr;
-    }
-
-    input{
-
-        width:80%;
-    }
-
+nav{
+flex-direction:column;
+gap:15px;
 }
 
-#matches{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.main-grid{
+grid-template-columns:1fr;
+}
+
+#player-list{
+grid-template-columns:1fr;
+}
+
+input{
+width:80%;
+}
+
 }
